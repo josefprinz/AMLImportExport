@@ -5,4 +5,4 @@ You will find here examples for the implementation of **AutomationML export and 
 
 The published source code illustrates these implementations as a guided walkthrough. 
 
-![Welcome page](/assets/welcome.png)
+![Welcome page](./Assets/welcome.png)
