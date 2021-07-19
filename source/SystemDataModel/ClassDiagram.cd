@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SystemDataModel.Model_A.ProductionLine" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <AssociationLine Name="Stations" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.969" Y="4.191" />
+        <Point X="5.969" Y="5.188" />
+        <Point X="5.25" Y="5.188" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.032" Y="0.585" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAQAAAAAAAAAAAAAAABAEAAEAA=</HashCode>
+      <FileName>SystemDataModel\Model_A\ProductionLine.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Stations" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SystemDataModel.Model_A.Project" Collapsed="true">
+    <Position X="3.25" Y="2" Width="1.25" />
+    <AssociationLine Name="Systems" Type="System.Collections.Generic.IEnumerable&lt;T&gt;">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.79" Y="1.143" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAABAEBAEAA=</HashCode>
+      <FileName>SystemDataModel\Model_A\Project.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Systems" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SystemDataModel.Model_A.ManufacturingSystem" Collapsed="true">
+    <Position X="4.25" Y="2.75" Width="1.75" />
+    <AssociationLine Name="Lines" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="4.938" Y="3.441" />
+        <Point X="4.938" Y="5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.01" Y="0.377" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAACAAABAEAAEAA=</HashCode>
+      <FileName>SystemDataModel\Model_A\ManufacturingSystem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Lines" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SystemDataModel.Model_A.Robot" Collapsed="true">
+    <Position X="7.25" Y="5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>gAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAEAA=</HashCode>
+      <FileName>SystemDataModel\Model_A\Robot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDataModel.Model_A.SystemClassBase" Collapsed="true">
+    <Position X="3.25" Y="1" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAgAAAAABQAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SystemDataModel\Model_A\SystemClassBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDataModel.Model_A.Station" Collapsed="true">
+    <Position X="6.5" Y="4.25" Width="1.25" />
+    <AssociationLine Name="Robots" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.938" Y="4.941" />
+        <Point X="6.938" Y="5.5" />
+        <Point X="5.25" Y="5.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.66" Y="0.01" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAAAAUAAEAA=</HashCode>
+      <FileName>SystemDataModel\Model_A\Station.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Robots" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="System.Collections.Generic.IEnumerable&lt;T&gt;" Collapsed="true">
+    <Position X="3.5" Y="5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

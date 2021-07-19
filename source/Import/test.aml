@@ -1,0 +1,279 @@
+﻿<CAEXFile SchemaVersion="3.0" FileName="test.aml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.dke.de/CAEX" xsi:schemaLocation="http://www.dke.de/CAEX CAEX_ClassModel_V.3.0.xsd">
+  <SuperiorStandardVersion>AutomationML 2.10</SuperiorStandardVersion>
+  <SourceDocumentInformation OriginName="" OriginID="" OriginVersion="" LastWritingDateTime="2021-01-17T15:09:53.2347719+01:00" />
+  <SourceDocumentInformation OriginName="AMLModelAExporterWithInternalization" OriginID="Exporter Model A" OriginVersion="" LastWritingDateTime="2021-01-17T15:09:53.2377639+01:00" OriginProjectID="PRJ-1" OriginProjectTitle="Small Project" />
+  <InstanceHierarchy Name="Small Project">
+    <Version>0</Version>
+    <InternalElement Name="Assembly" ID="18c70d55-fdaf-49b6-bf3e-cd5f3e173a12">
+      <InternalElement Name="Line_1" ID="f5620830-8f80-41d3-82a9-2e560a23a3d1" ChangeMode="create">
+        <InternalElement Name="Station_1" ID="08d4c823-c441-4b62-8a40-e7fed6ae5693" ChangeMode="create">
+          <Attribute Name="Area">
+            <Attribute Name="Length" AttributeDataType="xs:double" Unit="m">
+              <DefaultValue>0</DefaultValue>
+              <Value>105</Value>
+            </Attribute>
+            <Attribute Name="Width" AttributeDataType="xs:double" Unit="m">
+              <DefaultValue>0</DefaultValue>
+              <Value>113</Value>
+            </Attribute>
+          </Attribute>
+          <InternalElement Name="Robot_1" ID="f361e3a9-a374-4ffe-b9d6-948575980ed2" ChangeMode="create">
+            <Attribute Name="Load" AttributeDataType="xs:double" Unit="kg">
+              <DefaultValue>0</DefaultValue>
+              <Value>150</Value>
+            </Attribute>
+            <RoleRequirements RefBaseRoleClassPath="UserDefinedRoleClassLib/MyRobot" />
+          </InternalElement>
+          <InternalElement Name="Robot_2" ID="ae1ae8aa-94b6-46e7-8e32-f9c8c88525e3" ChangeMode="create">
+            <Attribute Name="Load" AttributeDataType="xs:double" Unit="kg">
+              <DefaultValue>0</DefaultValue>
+              <Value>331</Value>
+            </Attribute>
+            <RoleRequirements RefBaseRoleClassPath="UserDefinedRoleClassLib/MyRobot" />
+          </InternalElement>
+          <RoleRequirements RefBaseRoleClassPath="AutomationMLExtendedRoleClassLib/WorkCell" />
+        </InternalElement>
+        <InternalElement Name="Station_2" ID="de70c17c-b5c0-4329-88e4-360f48c40dd8" ChangeMode="create">
+          <Attribute Name="Area">
+            <Attribute Name="Length" AttributeDataType="xs:double" Unit="m">
+              <DefaultValue>0</DefaultValue>
+              <Value>109</Value>
+            </Attribute>
+            <Attribute Name="Width" AttributeDataType="xs:double" Unit="m">
+              <DefaultValue>0</DefaultValue>
+              <Value>115</Value>
+            </Attribute>
+          </Attribute>
+          <InternalElement Name="Robot_1" ID="8d2c2a42-22f2-4bcc-be66-efebf0e42f38" ChangeMode="create">
+            <Attribute Name="Load" AttributeDataType="xs:double" Unit="kg">
+              <DefaultValue>0</DefaultValue>
+              <Value>94</Value>
+            </Attribute>
+            <RoleRequirements RefBaseRoleClassPath="UserDefinedRoleClassLib/MyRobot" />
+          </InternalElement>
+          <InternalElement Name="Robot_2" ID="824c4689-89d0-48d5-8be8-56c45dd5d7cb" ChangeMode="create">
+            <Attribute Name="Load" AttributeDataType="xs:double" Unit="kg">
+              <DefaultValue>0</DefaultValue>
+              <Value>179</Value>
+            </Attribute>
+            <RoleRequirements RefBaseRoleClassPath="UserDefinedRoleClassLib/MyRobot" />
+          </InternalElement>
+          <RoleRequirements RefBaseRoleClassPath="AutomationMLExtendedRoleClassLib/WorkCell" />
+        </InternalElement>
+        <RoleRequirements RefBaseRoleClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure/ResourceStructure" />
+      </InternalElement>
+      <RoleRequirements RefBaseRoleClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure/ResourceStructure" />
+    </InternalElement>
+  </InstanceHierarchy>
+  <InterfaceClassLib Name="AutomationMLInterfaceClassLib" ChangeMode="state">
+    <Description>Standard Automation Markup Language Interface Class Library - Part 1 Content </Description>
+    <Version>2.10</Version>
+    <Copyright>AutomationML e.V.</Copyright>
+    <InterfaceClass Name="AutomationMLBaseInterface">
+      <InterfaceClass Name="Order" RefBaseClassPath="AutomationMLInterfaceClassLib/AutomationMLBaseInterface">
+        <Attribute Name="Direction" RefAttributeType="AutomationMLBaseAttributeTypeLib/Direction" AttributeDataType="xs:string">
+          <DefaultValue>InOut</DefaultValue>
+          <Constraint Name="AllowedValues">
+            <NominalScaledType>
+              <RequiredValue>In</RequiredValue>
+              <RequiredValue>Out</RequiredValue>
+              <RequiredValue>InOut</RequiredValue>
+            </NominalScaledType>
+          </Constraint>
+        </Attribute>
+      </InterfaceClass>
+      <InterfaceClass Name="Port" RefBaseClassPath="AutomationMLInterfaceClassLib/AutomationMLBaseInterface">
+        <Attribute Name="Direction" AttributeDataType="xs:string" RefAttributeType="AutomationMLBaseAttributeTypeLib/Direction">
+          <Constraint Name="AllowedValues">
+            <NominalScaledType>
+              <RequiredValue>In</RequiredValue>
+              <RequiredValue>Out</RequiredValue>
+              <RequiredValue>InOut</RequiredValue>
+            </NominalScaledType>
+          </Constraint>
+        </Attribute>
+        <Attribute Name="Cardinality" RefAttributeType="AutomationMLBaseAttributeTypeLib/Cardinality">
+          <Attribute Name="MinOccur" AttributeDataType="xs:unsignedInt" />
+          <Attribute Name="MaxOccur" AttributeDataType="xs:unsignedInt" />
+        </Attribute>
+        <Attribute Name="Category" AttributeDataType="xs:string" RefAttributeType="AutomationMLBaseAttributeTypeLib/Category" />
+      </InterfaceClass>
+      <InterfaceClass Name="PPRConnector" RefBaseClassPath="AutomationMLInterfaceClassLib/AutomationMLBaseInterface" />
+      <InterfaceClass Name="ExternalDataConnector" RefBaseClassPath="AutomationMLInterfaceClassLib/AutomationMLBaseInterface">
+        <Attribute Name="refURI" AttributeDataType="xs:anyURI" RefAttributeType="AutomationMLBaseAttributeTypeLib/refURI" />
+        <InterfaceClass Name="COLLADAInterface" RefBaseClassPath="AutomationMLInterfaceClassLib/AutomationMLBaseInterface/ExternalDataConnector">
+          <Attribute Name="refType" AttributeDataType="xs:string" />
+          <Attribute Name="target" AttributeDataType="xs:token" />
+        </InterfaceClass>
+        <InterfaceClass Name="PLCopenXMLInterface" RefBaseClassPath="AutomationMLInterfaceClassLib/AutomationMLBaseInterface/ExternalDataConnector" />
+        <InterfaceClass Name="ExternalDataReference" RefBaseClassPath="AutomationMLInterfaceClassLib/AutomationMLBaseInterface/ExternalDataConnector">
+          <Attribute Name="MIMEType" AttributeDataType="xs:string" RefAttributeType="AutomationMLBaseAttributeTypeLib/MIMEType" />
+        </InterfaceClass>
+      </InterfaceClass>
+      <InterfaceClass Name="Communication" RefBaseClassPath="AutomationMLInterfaceClassLib/AutomationMLBaseInterface">
+        <InterfaceClass Name="SignalInterface" RefBaseClassPath="AutomationMLInterfaceClassLib/AutomationMLBaseInterface/Communication" />
+      </InterfaceClass>
+    </InterfaceClass>
+  </InterfaceClassLib>
+  <RoleClassLib Name="AutomationMLBaseRoleClassLib">
+    <Description>Automation Markup Language Base Role Class Library - Part 1</Description>
+    <Version>2.10.0</Version>
+    <RoleClass Name="AutomationMLBaseRole" ChangeMode="state">
+      <RoleClass Name="Group" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole">
+        <Attribute Name="AssociatedFacet" RefAttributeType="AutomationMLBaseAttributeTypeLib/AssociatedFacet" AttributeDataType="xs:string" />
+      </RoleClass>
+      <RoleClass Name="Facet" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole" />
+      <RoleClass Name="Resource" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole" />
+      <RoleClass Name="Product" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole" />
+      <RoleClass Name="Process" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole" />
+      <RoleClass Name="Structure" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole">
+        <RoleClass Name="ProductStructure" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure" />
+        <RoleClass Name="ProcessStructure" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure" />
+        <RoleClass Name="ResourceStructure" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure" />
+      </RoleClass>
+      <RoleClass Name="ExternalData" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole" />
+    </RoleClass>
+  </RoleClassLib>
+  <RoleClassLib Name="UserDefinedRoleClassLib">
+    <RoleClass Name="MyRobot" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Robot"></RoleClass>
+  </RoleClassLib>
+  <RoleClassLib Name="AutomationMLDMIRoleClassLib">
+    <Description>Automation Markup Language  Discrete Manufacturing Industry Role Class Library</Description>
+    <Version>2.4.0</Version>
+    <RoleClass Name="DiscManufacturingEquipment" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Resource">
+      <RoleClass Name="Transport" RefBaseClassPath="DiscManufacturingEquipment" />
+      <RoleClass Name="Storage" RefBaseClassPath="DiscManufacturingEquipment" />
+      <RoleClass Name="Fixture" RefBaseClassPath="DiscManufacturingEquipment" />
+      <RoleClass Name="Gate" RefBaseClassPath="DiscManufacturingEquipment" />
+      <RoleClass Name="Robot" RefBaseClassPath="DiscManufacturingEquipment" />
+      <RoleClass Name="Tool" RefBaseClassPath="DiscManufacturingEquipment" />
+      <RoleClass Name="Carrier" RefBaseClassPath="DiscManufacturingEquipment" />
+      <RoleClass Name="Machine" RefBaseClassPath="DiscManufacturingEquipment" />
+      <RoleClass Name="StaticObject" RefBaseClassPath="DiscManufacturingEquipment" />
+    </RoleClass>
+  </RoleClassLib>
+  <RoleClassLib Name="AutomationMLCSRoleClassLib">
+    <Description>Automation Markup Language Control Industry Role Class Library</Description>
+    <Version>2.3.0</Version>
+    <RoleClass Name="ControlEquipment" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Resource">
+      <RoleClass Name="Communication" RefBaseClassPath="ControlEquipment" />
+      <RoleClass Name="ControlHardware" RefBaseClassPath="ControlEquipment">
+        <RoleClass Name="PC" RefBaseClassPath="ControlHardware" />
+        <RoleClass Name="IPC" RefBaseClassPath="ControlHardware" />
+        <RoleClass Name="EmbeddedDevice" RefBaseClassPath="ControlHardware" />
+        <RoleClass Name="Handheld" RefBaseClassPath="ControlHardware" />
+      </RoleClass>
+      <RoleClass Name="Sensor" RefBaseClassPath="ControlEquipment" />
+      <RoleClass Name="Actuator" RefBaseClassPath="ControlEquipment" />
+      <RoleClass Name="Controller" RefBaseClassPath="ControlEquipment">
+        <RoleClass Name="PLC" RefBaseClassPath="Controller" />
+        <RoleClass Name="NC" RefBaseClassPath="Controller" />
+        <RoleClass Name="RC" RefBaseClassPath="Controller" />
+        <RoleClass Name="PAC" RefBaseClassPath="Controller" />
+      </RoleClass>
+    </RoleClass>
+  </RoleClassLib>
+  <RoleClassLib Name="AutomationMLExtendedRoleClassLib">
+    <Version>2.7.0</Version>
+    <RoleClass Name="PLCFacet" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Facet" />
+    <RoleClass Name="HMIFacet" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Facet" />
+    <RoleClass Name="Enterprise" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure/ResourceStructure" />
+    <RoleClass Name="Site" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure/ResourceStructure" />
+    <RoleClass Name="Area" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure/ResourceStructure" />
+    <RoleClass Name="ProductionLine" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure/ResourceStructure" />
+    <RoleClass Name="WorkCell" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure/ResourceStructure" />
+    <RoleClass Name="ProcessCell" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure/ResourceStructure" />
+    <RoleClass Name="Unit" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure/ResourceStructure" />
+    <RoleClass Name="ProductionUnit" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure/ResourceStructure" />
+    <RoleClass Name="StorageZone" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure/ResourceStructure" />
+    <RoleClass Name="StorageUnit" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Structure/ResourceStructure" />
+    <RoleClass Name="Turntable" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Transport" />
+    <RoleClass Name="Conveyor" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Transport">
+      <RoleClass Name="BeltConveyor" RefBaseClassPath="Conveyor" />
+      <RoleClass Name="RollConveyor" RefBaseClassPath="Conveyor" />
+      <RoleClass Name="ChainConveyor" RefBaseClassPath="Conveyor" />
+      <RoleClass Name="PalletConveyor" RefBaseClassPath="Conveyor" />
+      <RoleClass Name="OverheadConveyor" RefBaseClassPath="Conveyor" />
+    </RoleClass>
+    <RoleClass Name="LiftingTable" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Transport" />
+    <RoleClass Name="AGV" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Transport" />
+    <RoleClass Name="Transposer" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Transport" />
+    <RoleClass Name="CarrierHandlingSystem" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Transport" />
+    <RoleClass Name="BodyStore" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Storage" />
+    <RoleClass Name="Lift" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Transport" />
+    <RoleClass Name="Rollerbed" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Transport" />
+    <RoleClass Name="StationaryTool" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Tool" />
+    <RoleClass Name="MovableTool" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Tool" />
+    <RoleClass Name="ControlCabinet" RefBaseClassPath="AutomationMLCSRoleClassLib/ControlEquipment" />
+    <RoleClass Name="IODevice" RefBaseClassPath="AutomationMLCSRoleClassLib/ControlEquipment" />
+    <RoleClass Name="HMI" RefBaseClassPath="AutomationMLCSRoleClassLib/ControlEquipment">
+      <RoleClass Name="WarningEquipment" RefBaseClassPath="AutomationMLExtendedRoleClassLib/HMI" />
+    </RoleClass>
+    <RoleClass Name="ActuatingDrive" RefBaseClassPath="AutomationMLCSRoleClassLib/ControlEquipment/Actuator" />
+    <RoleClass Name="MotionController" RefBaseClassPath="AutomationMLCSRoleClassLib/ControlEquipment" />
+    <RoleClass Name="Panel" RefBaseClassPath="AutomationMLCSRoleClassLib/ControlEquipment/ControlHardware" />
+    <RoleClass Name="MeasuringEquipment" RefBaseClassPath="AutomationMLBaseRoleClassLib/AutomationMLBaseRole/Resource" />
+    <RoleClass Name="Clamp" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Fixture" />
+    <RoleClass Name="ProcessController" RefBaseClassPath="AutomationMLCSRoleClassLib/ControlEquipment/Controller" />
+    <RoleClass Name="Loader" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Storage" />
+    <RoleClass Name="Unloader" RefBaseClassPath="AutomationMLDMIRoleClassLib/DiscManufacturingEquipment/Storage" />
+  </RoleClassLib>
+  <AttributeTypeLib Name="AutomationMLBaseAttributeTypeLib" ChangeMode="state">
+    <Description>Standard Automation Markup Language Attribute Type Library</Description>
+    <Version>2.10.0</Version>
+    <Copyright>AutomationML e.V.</Copyright>
+    <AttributeType Name="AssociatedExternalValue">
+      <Attribute Name="refCAEXAttribute" AttributeDataType="xs:string" />
+      <Attribute Name="refURI" AttributeDataType="xs:string" />
+      <Attribute Name="Direction" AttributeDataType="xs:string" />
+    </AttributeType>
+    <AttributeType Name="AssociatedFacet" AttributeDataType="xs:string" />
+    <AttributeType Name="Cardinality">
+      <Attribute Name="MinOccur" AttributeDataType="xs:unsignedInt" />
+      <Attribute Name="MaxOccur" AttributeDataType="xs:unsignedInt" />
+    </AttributeType>
+    <AttributeType Name="Category" AttributeDataType="xs:string" />
+    <AttributeType Name="Direction" AttributeDataType="xs:string">
+      <DefaultValue>InOut</DefaultValue>
+      <Constraint Name="AllowedValues">
+        <NominalScaledType>
+          <RequiredValue>In</RequiredValue>
+          <RequiredValue>Out</RequiredValue>
+          <RequiredValue>InOut</RequiredValue>
+        </NominalScaledType>
+      </Constraint>
+    </AttributeType>
+    <AttributeType Name="DocLang" AttributeDataType="xs:string" />
+    <AttributeType Name="Frame" AttributeDataType="">
+      <Attribute Name="x" AttributeDataType="xs:double">
+        <DefaultValue>0</DefaultValue>
+        <Value>0</Value>
+      </Attribute>
+      <Attribute Name="y" AttributeDataType="xs:double">
+        <DefaultValue>0</DefaultValue>
+        <Value>0</Value>
+      </Attribute>
+      <Attribute Name="z" AttributeDataType="xs:double">
+        <DefaultValue>0</DefaultValue>
+        <Value>0</Value>
+      </Attribute>
+      <Attribute Name="rx" AttributeDataType="xs:double">
+        <DefaultValue>0</DefaultValue>
+        <Value>0</Value>
+      </Attribute>
+      <Attribute Name="ry" AttributeDataType="xs:double">
+        <DefaultValue>0</DefaultValue>
+        <Value>0</Value>
+      </Attribute>
+      <Attribute Name="rz" AttributeDataType="xs:double">
+        <DefaultValue>0</DefaultValue>
+        <Value>0</Value>
+      </Attribute>
+    </AttributeType>
+    <AttributeType Name="ListType" AttributeDataType="xs:string" />
+    <AttributeType Name="LocalizedAttribute" AttributeDataType="xs:string" />
+    <AttributeType Name="MIMEType" AttributeDataType="xs:string" />
+    <AttributeType Name="OrderedListType" AttributeDataType="xs:string" />
+    <AttributeType Name="refURI" AttributeDataType="xs:anyURI" />
+  </AttributeTypeLib>
+</CAEXFile>

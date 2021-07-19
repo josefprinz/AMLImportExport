@@ -1,0 +1,41 @@
+﻿<mui:ModernWindow
+    x:Class="ImportExport.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+    Title="AutomationML Import Export Examples"
+    Width="1000"
+    Height="700"
+    ContentSource="/Welcome.xaml"
+    IsTitleVisible="True"
+    LogoData="M 6.15051,0.925498C 3.9425,0.925498 2.15051,1.82149 2.15051,2.9255L 2.15051,8.9255C 2.15051,10.0308 3.9425,10.9255 6.15051,10.9255C 8.35984,10.9255 10.1505,10.0308 10.1505,8.9255L 10.1505,2.9255C 10.1505,1.82149 8.35984,0.925498 6.15051,0.925498 Z M 6.15051,4.2548C 4.15051,4.2548 2.82784,3.45748 2.82784,2.9255C 2.82784,2.40015 4.15051,1.60283 6.15051,1.60283C 8.15051,1.60283 9.4785,2.40015 9.4785,2.9255C 9.4785,3.45748 8.15051,4.2548 6.15051,4.2548 Z M 3.57727,8.1381C 3.57727,7.01673 4.53245,6.10665 5.70935,6.10665L 8.37474,6.10665L 7.19781,4.98092L 7.78459,4.40129L 7.79252,4.41427L 7.7971,4.40995L 10.0133,6.52592L 7.75728,8.66789L 7.74819,8.65922L 7.15802,8.10018L 8.38837,6.91923L 5.70935,6.91923C 5.00775,6.91923 4.43011,7.46961 4.43011,8.1381C 4.43011,8.81201 5.00775,9.35702 5.70935,9.35702L 6.13576,9.35702L 6.13576,10.1696L 5.70935,10.1696C 4.53245,10.1696 3.57727,9.26489 3.57727,8.1381 Z "
+    mc:Ignorable="d">
+
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="Welcome">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Welcome" Source="/Welcome.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="Model A">
+            <mui:LinkGroup.Links>
+
+                <mui:Link DisplayName="Generate Data" Source="/GenerateModelAView.xaml" />
+                <mui:Link DisplayName="Export Internalized" Source="/ModelAExportInternalized.xaml" />
+                <mui:Link DisplayName="Export Externalized" Source="/ModelAExportExternalized.xaml" />
+                <mui:Link DisplayName="Import Internalized" Source="/ModelAImportInternalized.xaml" />
+                <mui:Link DisplayName="Import Externalized" Source="/ModelAImportExternalized.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="Sourcecode">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Export 'Internalization' CodePage" Source="/SourcePages/ExporterWithInternalization.xaml" />
+                <mui:Link DisplayName="Export 'Externalization' Code Page" Source="/SourcePages/ExporterWithExternalization.xaml" />
+                <mui:Link DisplayName="Import 'Internalization' Code Page" Source="/SourcePages/ImporterWithInternalization.xaml" />
+                <mui:Link DisplayName="Import 'Externalization' Code Page" Source="/SourcePages/ImporterWithExternalization.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+</mui:ModernWindow>

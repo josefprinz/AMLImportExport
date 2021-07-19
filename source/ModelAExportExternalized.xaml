@@ -1,0 +1,95 @@
+﻿<UserControl
+    x:Class="ImportExport.ModelAExportExternalized"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:aml="http://www.automationml.org/amlTool/"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ImportExport"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Border
+            Margin="10"
+            BorderBrush="Blue"
+            BorderThickness="1">
+            <Grid Margin="10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <aml:AMLTreeView
+                    x:Name="ExternalizedModelATree"
+                    SnapsToDevicePixels="True"
+                    TreeViewModel="{Binding ExternalizedModelA}">
+                    <aml:AMLTreeView.LayoutTransform>
+                        <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+                    </aml:AMLTreeView.LayoutTransform>
+                </aml:AMLTreeView>
+
+                <mui:BBCodeBlock
+                    Grid.Row="1"
+                    Padding="20"
+                    BBCode="The hierarchical order of the SystemUnit classes also implies an order of the class instances. These implicit containment restrictions are interpreted by the exporter and importer." />
+            </Grid>
+        </Border>
+
+        <Border
+            Grid.Column="1"
+            Margin="10"
+            BorderBrush="Blue"
+            BorderThickness="1">
+            <Grid Margin="10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <aml:AMLTreeView
+                    x:Name="AMLExportResult"
+                    SnapsToDevicePixels="True"
+                    TreeViewModel="{Binding ExportModelADocumentExternalized}">
+                    <aml:AMLTreeView.LayoutTransform>
+                        <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+                    </aml:AMLTreeView.LayoutTransform>
+                </aml:AMLTreeView>
+
+                <StackPanel
+                    Grid.Row="1"
+                    Margin="0,20,0,0"
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+                    <Button
+                        Width="100"
+                        Command="{Binding ExportModelAExternalizedCommand}"
+                        CommandParameter="Externalized">
+                        Generate
+                    </Button>
+
+                    <Button
+                        Width="100"
+                        Margin="10,0"
+                        Command="{Binding SaveExportCommand}"
+                        CommandParameter="Externalized">
+                        Save File
+                    </Button>
+                </StackPanel>
+
+                <mui:BBCodeBlock
+                    Grid.Row="2"
+                    Padding="20"
+                    BBCode="This view shows the 'Model A' data transformed to AutomationML using an [b]externalized[/b] export Algorithm. Push Button [b]Generate[/b] to transform the data to AutomationML. The algorithm is implemented in the class named [color=Blue] [b]AMLModelAExporterWithExternalization[/b]. [url=/SourcePages/ExporterWithExternalization.xaml] Click here to go to the source code page.[/url]" />
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,95 @@
+﻿<UserControl
+    x:Class="ImportExport.ModelAImportInternalized"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:aml="http://www.automationml.org/amlTool/"
+    xmlns:avalon="http://icsharpcode.net/sharpdevelop/avalonedit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ImportExport.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="btvc" />
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Border
+            Grid.Column="0"
+            Margin="10"
+            BorderBrush="Blue"
+            BorderThickness="1">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <aml:AMLTreeView
+                        x:Name="AMLImport2"
+                        SnapsToDevicePixels="True"
+                        TreeViewModel="{Binding ImportInternalizedCAEXDocumentTree, UpdateSourceTrigger=PropertyChanged}">
+                        <aml:AMLTreeView.LayoutTransform>
+                            <ScaleTransform ScaleX="1.1" ScaleY="1.1" />
+                        </aml:AMLTreeView.LayoutTransform>
+                    </aml:AMLTreeView>
+
+                   
+
+                </Grid>
+
+                <mui:BBCodeBlock
+                    Grid.Row="2"
+                    Padding="20"
+                    BBCode="This view shows the AutomationML data to be imported by an [b]internalized[/b] import Algorithm. Push Button [b]'Import'[/b]  to load the file and import and transform the data to an 'Model A'.  Start with a re-import of a previously exported document before trying to import any other AutomationML document. Observe what happens. The algorithm is implemented in the class named [color=Blue] [b]AMLModelAImporterWithInternalization[/b]. [url=/SourcePages/ImporterWithInternalization.xaml]Click here to go to the source code page.[/url]" />
+
+                <StackPanel
+                    Grid.Row="1"
+                    Margin="0,20,0,0"
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+
+                    <Button
+                        Width="100"
+                        Command="{Binding ImportModelACommand}"
+                        CommandParameter="Intern">
+                        Import
+                    </Button>
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+        <Border
+            Grid.Column="1"
+            Margin="10"
+            BorderBrush="Blue"
+            BorderThickness="1">
+            <Grid Margin="10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <avalon:TextEditor x:Name="ModelA" Document="{Binding ImportedModelAInternalized}" />
+
+                <mui:BBCodeBlock
+                    Grid.Row="1"
+                    Padding="20"
+                    BBCode="This view shows the imported 'Model A' data, serialzed from the system data model after the import." />
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
